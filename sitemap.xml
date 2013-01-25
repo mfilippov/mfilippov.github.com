@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/</loc>
+        <loc>http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/</loc>
         <lastmod>2013-01-26T00:11:20+04:00</lastmod>
     </url>
     <url>
-        <loc>http://filippovma.github.com/blog/2013/01/26/review-infobox-cloud/</loc>
+        <loc>http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/</loc>
         <lastmod>2013-01-26T00:15:43+04:00</lastmod>
     </url>
     <url>
-        <loc>http://filippovma.github.com/blog/archives/</loc>
+        <loc>http://blog.filippov.me/blog/archives/</loc>
         <lastmod>2013-01-26T00:15:43+04:00</lastmod>
     </url>
     <url>
-        <loc>http://filippovma.github.com/</loc>
+        <loc>http://blog.filippov.me/</loc>
         <lastmod>2013-01-26T00:15:43+04:00</lastmod>
     </url>
     <url>
-        <loc>http://filippovma.github.com/robots.txt</loc>
+        <loc>http://blog.filippov.me/robots.txt</loc>
         <lastmod>2013-01-26T00:11:20+04:00</lastmod>
     </url>
 </urlset>

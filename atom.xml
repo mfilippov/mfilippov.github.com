@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://filippovma.github.com/atom.xml" rel="self"/>
-  <link href="http://filippovma.github.com/"/>
-  <updated>2013-01-26T00:55:43+04:00</updated>
-  <id>http://filippovma.github.com/</id>
+  <title><![CDATA[Mikhail Filippov's Blog]]></title>
+  <link href="http://blog.filippov.me/atom.xml" rel="self"/>
+  <link href="http://blog.filippov.me/"/>
+  <updated>2013-01-26T01:05:17+04:00</updated>
+  <id>http://blog.filippov.me/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Mikhail Filippov]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Review InfoBox Cloud]]></title>
-    <link href="http://filippovma.github.com/blog/2013/01/26/review-infobox-cloud/"/>
+    <link href="http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/"/>
     <updated>2013-01-26T00:15:00+04:00</updated>
-    <id>http://filippovma.github.com/blog/2013/01/26/review-infobox-cloud</id>
+    <id>http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Тестирование с помощью Microsoft Fakes]]></title>
-    <link href="http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/"/>
+    <link href="http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/"/>
     <updated>2012-07-08T10:39:00+04:00</updated>
-    <id>http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes</id>
+    <id>http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes</id>
     <content type="html"><![CDATA[<p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
 
 <p>В .NET существует популярный mock-фреймвок: <a href="http://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
@@ -182,7 +182,7 @@
 
 <p>Теперь перепишем тест с использованием Stubs, для этого для начала нужно сгенерировать Stubs. Нажмем правой кнопкой на сборку к которой мы хотим получить Stub. И выберем: Add Fakes Assembly.</p>
 
-<p><img src="http://filippovma.github.com/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
+<p><img src="http://blog.filippov.me/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
 
 <p>После этого у нас появятся сгенерированные Stubs для всех классов сборки. И файл с расширением .fakes с настройками кодогенерации. Теперь в тесте мы можем использовать сгенерированный Stub.</p>
 
