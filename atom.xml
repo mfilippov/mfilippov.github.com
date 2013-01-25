@@ -1,136 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
-
-  
-  <meta name="description" content="
-">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://filippovma.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:filippovma.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://filippovma.github.com/atom.xml" rel="self"/>
+  <link href="http://filippovma.github.com/"/>
+  <updated>2013-01-26T00:55:43+04:00</updated>
+  <id>http://filippovma.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/26/review-infobox-cloud/">Review InfoBox Cloud</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-01-26T00:15:00+04:00" pubdate data-updated="true">Jan 26<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
+  <entry>
+    <title type="html"><![CDATA[Review InfoBox Cloud]]></title>
+    <link href="http://filippovma.github.com/blog/2013/01/26/review-infobox-cloud/"/>
+    <updated>2013-01-26T00:15:00+04:00</updated>
+    <id>http://filippovma.github.com/blog/2013/01/26/review-infobox-cloud</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/08/unit-testing-with-microsoft-fakes/">Тестирование с помощью Microsoft Fakes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-08T10:39:00+04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
+  <entry>
+    <title type="html"><![CDATA[Тестирование с помощью Microsoft Fakes]]></title>
+    <link href="http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/"/>
+    <updated>2012-07-08T10:39:00+04:00</updated>
+    <id>http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes</id>
+    <content type="html"><![CDATA[<p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
 
 <p>В .NET существует популярный mock-фреймвок: <a href="http://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
 
@@ -285,7 +182,7 @@
 
 <p>Теперь перепишем тест с использованием Stubs, для этого для начала нужно сгенерировать Stubs. Нажмем правой кнопкой на сборку к которой мы хотим получить Stub. И выберем: Add Fakes Assembly.</p>
 
-<p><img src="/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
+<p><img src="http://filippovma.github.com/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
 
 <p>После этого у нас появятся сгенерированные Stubs для всех классов сборки. И файл с расширением .fakes с настройками кодогенерации. Теперь в тесте мы можем использовать сгенерированный Stub.</p>
 
@@ -415,73 +312,7 @@ Stub так же можно использовать для мокировани
 <p>Подведем итоги Microsoft Fakes представляет собой Mock-фреймворк интегрированный в Visual Studio 2012 и позволяющий сильно упростить написание тестов на платформе .NET.</p>
 
 <p>P.S. Если кому-то интересны какие-то особенности Fakes пишите комментарии постораюсь ответить.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/01/26/review-infobox-cloud/">Review InfoBox Cloud</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/08/unit-testing-with-microsoft-fakes/">Тестирование с помощью Microsoft Fakes</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

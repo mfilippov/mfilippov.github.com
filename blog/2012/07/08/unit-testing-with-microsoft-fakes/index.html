@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>Тестирование с помощью Microsoft Fakes - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://filippovma.github.com/">
+  <link rel="canonical" href="http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,51 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/26/review-infobox-cloud/">Review InfoBox Cloud</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-26T00:15:00+04:00" pubdate data-updated="true">Jan 26<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/08/unit-testing-with-microsoft-fakes/">Тестирование с помощью Microsoft Fakes</a></h1>
+      <h1 class="entry-title">Тестирование с помощью Microsoft Fakes</h1>
     
     
       <p class="meta">
@@ -130,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
+<div class="entry-content"><p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
 
 <p>В .NET существует популярный mock-фреймвок: <a href="http://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
 
@@ -416,18 +376,53 @@ Stub так же можно использовать для мокировани
 
 <p>P.S. Если кому-то интересны какие-то особенности Fakes пишите комментарии постораюсь ответить.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-07-08T10:39:00+04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/" data-via="" data-counturl="http://filippovma.github.com/blog/2012/07/08/unit-testing-with-microsoft-fakes/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/26/review-infobox-cloud/" title="Next Post: Review InfoBox Cloud">Review InfoBox Cloud &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -452,6 +447,7 @@ Stub так же можно использовать для мокировани
 
   
 </aside>
+
 
     </div>
   </div>
