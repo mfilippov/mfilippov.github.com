@@ -4,7 +4,7 @@
   <title><![CDATA[Mikhail Filippov's Blog]]></title>
   <link href="http://blog.filippov.me/atom.xml" rel="self"/>
   <link href="http://blog.filippov.me/"/>
-  <updated>2013-01-28T10:52:28+04:00</updated>
+  <updated>2013-02-01T16:30:33+04:00</updated>
   <id>http://blog.filippov.me/</id>
   <author>
     <name><![CDATA[Mikhail Filippov]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Как открыть VHD образ виртуальной машины в Parallels Desktop 8]]></title>
+    <link href="http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/"/>
+    <updated>2013-02-01T15:18:00+04:00</updated>
+    <id>http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop</id>
+    <content type="html"><![CDATA[<p>Я часто сталкиваюсь с необходимостью развертывания различных виртуальных машин на своем ноутбуке. В этом мне всегда помогает Parallels Desktop 8. Это хороший продукт который очень тесно интегрирован в мою основную ОС Mac OS X. Отдельные типа виртуальных машин PD8 умеет конвертировать при открытии, то есть достаточно выполнить комманду File->Open и выбрать файл с настройками виртуальной машины. Этот способ работает для VMWare и VirtualBox, когда у вас есть файл с настройками машины.</p>
+
+<p>Недавно мне понадобилось развернуть несколько триальных версий Windows Server 2012 для тестирования. Ставить их из ISO образов очень не хотелось. Благо у Microsoft доступны готовые предустановленные образы виртуальных машин в формате VHD. Только вот незадача PD8 никак не хотел делать из такого образа машину. Немного погуглив я нашел способ как это сделать.</p>
+
+<p>Для начала скачаем файл образ машины: <em>9200.16384.amd64fre.win8_rtm.120725-1247_server_serverstandardeval_en-us.vhd</em>.</p>
+
+<p>Кладем его в отдельную папку и рядом с ним создаем файл: &#8220;Windows Server 2012.vmc&#8221; со следующем содержимым:</p>
+
+<figure class='code'><figcaption><span>Windows Server 2012.vmc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;preferences&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;version</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>2.0<span class="nt">&lt;/version&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;hardware&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;pci_bus&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;ide_adapter&gt;</span>
+</span><span class='line'>                  <span class="nt">&lt;ide_controller</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                      <span class="nt">&lt;location</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                          <span class="nt">&lt;drive_type</span> <span class="na">type=</span><span class="s">&quot;integer&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/drive_type&gt;</span>
+</span><span class='line'>                          <span class="nt">&lt;pathname&gt;</span>
+</span><span class='line'>                              <span class="nt">&lt;absolute</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>/Path-To-VHD-Folder/9200.16384.amd64fre.win8_rtm.120725-1247_server_serverstandardeval_en-us.vhd<span class="nt">&lt;/absolute&gt;</span>
+</span><span class='line'>                              <span class="nt">&lt;relative</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>9200.16384.amd64fre.win8_rtm.120725-1247_server_serverstandardeval_en-us.vhd<span class="nt">&lt;/relative&gt;</span>
+</span><span class='line'>                          <span class="nt">&lt;/pathname&gt;</span>
+</span><span class='line'>                      <span class="nt">&lt;/location&gt;</span>
+</span><span class='line'>                  <span class="nt">&lt;/ide_controller&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;/ide_adapter&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/pci_bus&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/hardware&gt;</span>
+</span><span class='line'><span class="nt">&lt;/preferences&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Теперь открываем этот файл в PD8 File->Open:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/1.png" alt="Открываем файл" /></p>
+
+<p>PD8 предложит конвертировать машину:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/2.png" alt="Начало конвертации" /></p>
+
+<p>Указываем папку куда положить конвертированную машину и запускаем процесс:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/3.png" alt="Процесс конвертации" /></p>
+
+<p>После завершения конвертиции можно сразу запустить машину. Но мне необходимо запустить несколько таких машин, по этому превращу машину в шаблон. Когда после конвертации PD8 спросит нужно ли запустить машину для завершения конвертации выбираем No.</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/4.png" alt="No" /></p>
+
+<p>Выбираем File->Convert To Template:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/5.png" alt="Convert to template" /></p>
+
+<p>После этого закрываем машину и у нас в списке машин появляется готовый шаблон. Делаем из этого шаблона рабочую машину:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/6.png" alt="Развертывание" />
+<img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/7.png" alt="Куда развертывать" /></p>
+
+<p>Теперь можно запустить развернутую машину она при этом продолжит конвертацию:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/8.png" alt="Продолжение конвертации" /></p>
+
+<p>Через некоторое время машина попросит сделать дополнительные настройки:</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/9.png" alt="Дополнительные настройки" /></p>
+
+<p>Проходим шаги мастера настройки ОС и входим в систему. После этого автоматически установятся Parallels Tools машина перезагрузится и конвертация будет завершена.</p>
+
+<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/10.png" alt="Завершение" /></p>
+
+<p>Шаблон для Windows Server я специально сделал до первого запуска, потому что при этом у каждой виртуальной машины будет свой собственный SID и они смогут нормально работать в одном домене Active Directory. Если этого не сделать, а сразу запустить машину и довести конвертацию до конца, не получится ввести две виртуальных машины в один домен так как у них будут одинаковые SID.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Обзор облака из коробки.]]></title>
@@ -24,7 +119,7 @@
 
 <p>Интерфейс управления облаком InfoBox выглядит достаточно не плохо и в целом позволяет быстро разобраться с ним даже не подготовленному пользователю. При создании машин есть 3 предопределенных профиля: Basic, Power и Mega. Вот пример настроек доступных при создании виртуальной машины:
 <img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/1.png" alt="Создание виртуальной машины" />
-Есть одна интересная особенность не забудьте выбрать пропускную способность. Шейпер у инфобокс работает очень хорошо, я сначала не понял почему так сильно тормозит сеть. Особенно это сильно заметно на RDP соединение у Windows машины. Эту настройку можно поменять после того как машины будет создана.</p>
+Есть одна интересная особенность не забудьте выбрать пропускную способность. Шейпер у инфобокс работает очень хорошо, я сначала не понял почему так сильно тормозит сеть. Особенно это сильно заметно на RDP соединение у Windows машины. Эту настройку можно будет поменять после того как машина будет создана.</p>
 
 <p>В работе с сетью есть несколько особенностей. Во первых у клиента есть возможность использовать как публичные так и приватные адреса. То есть вы можете создать приватную сетевую  инфраструктуру и сделать себе 1 точку входа в нее. Во вторых можно создать один или несколько преднастроенных балансировщиков нагрузки HTTP, которые можно сразу назначить на уже созданные сервера. Еще одно особенностью является то что исходящий траффик платный. Для тестирования производительности сети я установил на сервер SpeedTest Mini. Вот результат теста при том что в настройках сетевого подключения стоит ограничение 100 КБит/сек:</p>
 

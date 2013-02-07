@@ -30,6 +30,18 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32711941-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -96,7 +108,7 @@
 
 <p>Интерфейс управления облаком InfoBox выглядит достаточно не плохо и в целом позволяет быстро разобраться с ним даже не подготовленному пользователю. При создании машин есть 3 предопределенных профиля: Basic, Power и Mega. Вот пример настроек доступных при создании виртуальной машины:
 <img src="/images/2013-01-26-review-infobox-cloud/1.png" alt="Создание виртуальной машины" />
-Есть одна интересная особенность не забудьте выбрать пропускную способность. Шейпер у инфобокс работает очень хорошо, я сначала не понял почему так сильно тормозит сеть. Особенно это сильно заметно на RDP соединение у Windows машины. Эту настройку можно поменять после того как машины будет создана.</p>
+Есть одна интересная особенность не забудьте выбрать пропускную способность. Шейпер у инфобокс работает очень хорошо, я сначала не понял почему так сильно тормозит сеть. Особенно это сильно заметно на RDP соединение у Windows машины. Эту настройку можно будет поменять после того как машина будет создана.</p>
 
 <p>В работе с сетью есть несколько особенностей. Во первых у клиента есть возможность использовать как публичные так и приватные адреса. То есть вы можете создать приватную сетевую  инфраструктуру и сделать себе 1 точку входа в нее. Во вторых можно создать один или несколько преднастроенных балансировщиков нагрузки HTTP, которые можно сразу назначить на уже созданные сервера. Еще одно особенностью является то что исходящий траффик платный. Для тестирования производительности сети я установил на сервер SpeedTest Mini. Вот результат теста при том что в настройках сетевого подключения стоит ограничение 100 КБит/сек:</p>
 
@@ -170,6 +182,8 @@
         <a class="basic-alignment left" href="/blog/2012/07/08/unit-testing-with-microsoft-fakes/" title="Previous Post: Тестирование с помощью Microsoft Fakes">&laquo; Тестирование с помощью Microsoft Fakes</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/" title="Next Post: Как открыть VHD образ виртуальной машины в Parallels Desktop 8">Как открыть VHD образ виртуальной машины в Parallels Desktop 8 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -187,6 +201,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/">Как открыть VHD образ виртуальной машины в Parallels Desktop 8</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/26/review-infobox-cloud/">Обзор облака из коробки.</a>
