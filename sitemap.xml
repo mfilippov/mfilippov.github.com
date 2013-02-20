@@ -12,15 +12,21 @@
         <loc>
             http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/
         </loc>
-        <lastmod>2013-02-01T16:30:27+04:00</lastmod>
+        <lastmod>2013-02-01T16:31:02+04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/
+        </loc>
+        <lastmod>2013-02-20T11:53:11+04:00</lastmod>
     </url>
     <url>
         <loc>http://blog.filippov.me/blog/archives/</loc>
-        <lastmod>2013-02-01T16:30:27+04:00</lastmod>
+        <lastmod>2013-02-20T11:53:11+04:00</lastmod>
     </url>
     <url>
         <loc>http://blog.filippov.me/</loc>
-        <lastmod>2013-02-01T16:30:27+04:00</lastmod>
+        <lastmod>2013-02-20T11:53:11+04:00</lastmod>
     </url>
     <url>
         <loc>http://blog.filippov.me/robots.txt</loc>

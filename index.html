@@ -9,7 +9,7 @@
   <meta name="author" content="Mikhail Filippov">
 
   
-  <meta name="description" content="Я часто сталкиваюсь с необходимостью развертывания различных виртуальных машин на своем ноутбуке. В этом мне всегда помогает Parallels Desktop 8. Это &hellip;">
+  <meta name="description" content="Недавно столкнулся со с проблемой в Umbraco CMS. С настройками по умолчанию не получалось загружать файлы больше 30Мб. Причем выглядит это крайне &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,106 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/">Загрузка больших файлов в Media для Umbraco CMS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-15T19:09:00+04:00" pubdate data-updated="true">Feb 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Недавно столкнулся со с проблемой в Umbraco CMS. С настройками по умолчанию не получалось загружать файлы больше 30Мб. Причем выглядит это крайне странно полоска загрузки файл пробегает окно загрузки закрывается, при этом файл не появляется. При это никаких ошибок не возникает. Обычно проблемы с загрузкой больших файлов решается установкой в web.config настройки максимальной длины запроса:</p>
+
+<figure class='code'><figcaption><span>web.config </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;httpRuntime</span> <span class="na">requestValidationMode=</span><span class="s">&quot;2.0&quot;</span> <span class="na">maxRequestLength=</span><span class="s">&quot;1024000&quot;</span> <span class="na">executionTimeout=</span><span class="s">&quot;3600&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Но это не помогло.</p>
+
+<p>Попытаемся разобраться в чем же дело. Для начала посмотрим что происходит при загрузке файла. Для этого запустим Fiddler и попытаемся проанализировать весь процесс.</p>
+
+<ul>
+<li>Нажимаем кнопку загрузить файл:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/1.png" alt="Нажимаем загрузить файл" /></li>
+<li>Выбираем файл и нажимаем кнопку Upload:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/2.png" alt="Выбираем файл" /></li>
+<li>Видим что пошла нормальная загрузка:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/3.png" alt="Пошла загрузка" /></li>
+<li>После окончания загрузки окно закрывается без ошибок и предупреждений но файл на появляется.
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/4.png" alt="Файл не появился" /></li>
+<li>Откроем окно загрузки повторно:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/5.png" alt="Повторное октрытие" /></li>
+<li>Тут мы видим что полоска загрузки красная похоже произошла какая-то ошибка. Посмотрим что в этот момент происходило в Fiddler. Происходит странное, в момент обращения к обработчику MediaUploader.ashx выдается ошибка 404, при этом в случае загрузки небольшого файла такого не происходит.
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/6.png" alt="Повторное октрытие" /></li>
+<li>После долгих поисков я нашел параметр который отвечает за настройку фильтрации максимальному размеру поля Content-Legth в запросе. Для его изменения открываем IIS Manager(Его можно поменять и из web.config как я опишу ниже). Открывает настройки нашего сайта и выбираем &#8220;Request Filtering&#8221;:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/7.png" alt="ISS Manager" /></li>
+<li>На панели действий выбираем &#8220;Edit Feature Settings…&#8221;:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/8.png" alt="Edit Feature Settings" /></li>
+<li>Меняем значение поля Maximum allowed content length на большее например дописываем пару нулей :), обратите внимание что размер значения в байтах:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/9.png" alt="Change Settings" /></li>
+<li>В web.config проверяем что в httpRuntime стоит правильно значение maxRequestLength без этого работать не будет!</li>
+<li>Пробуем повторно загрузить файл:
+<img src="/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/10.png" alt="Change Settings" /></li>
+<li>Все работает как надо</li>
+</ul>
+
+
+<p>В итоге чтобы работала загрузка больших файлов в Media, в секции  system.web и system.webServer файла web.config нужно добавить следующие параметры (ограничение размера 1Гб):</p>
+
+<figure class='code'><figcaption><span>web.config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;configuration&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;system.web&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;httpRuntime</span> <span class="na">requestValidationMode=</span><span class="s">&quot;2.0&quot;</span> <span class="na">maxRequestLength=</span><span class="s">&quot;1024000&quot;</span> <span class="na">executionTimeout=</span><span class="s">&quot;3600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/system.web&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;system.webServer&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;security&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;requestFiltering&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;requestLimits</span> <span class="na">maxAllowedContentLength=</span><span class="s">&quot;1024000000&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/requestFiltering&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/security&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/system.webServer&gt;</span>
+</span><span class='line'><span class="nt">&lt;/configuration&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/">Как открыть VHD образ виртуальной машины в Parallels Desktop 8</a></h1>
     
     
@@ -105,7 +205,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Я часто сталкиваюсь с необходимостью развертывания различных виртуальных машин на своем ноутбуке. В этом мне всегда помогает Parallels Desktop 8. Это хороший продукт который очень тесно интегрирован в мою основную ОС Mac OS X. Отдельные типа виртуальных машин PD8 умеет конвертировать при открытии, то есть достаточно выполнить комманду File->Open и выбрать файл с настройками виртуальной машины. Этот способ работает для VMWare и VirtualBox, когда у вас есть файл с настройками машины.</p>
+  <div class="entry-content"><p>Я часто сталкиваюсь с необходимостью развертывания различных виртуальных машин на своем ноутбуке. В этом мне всегда помогает Parallels Desktop 8. Это хороший продукт, который очень тесно интегрирован в мою основную ОС Mac OS X. Отдельные типа виртуальных машин PD8 умеет конвертировать при открытии, то есть достаточно выполнить комманду File->Open и выбрать файл с настройками виртуальной машины. Этот способ работает для VMWare и VirtualBox, когда у вас есть файл с настройками машины.</p>
 
 <p>Недавно мне понадобилось развернуть несколько триальных версий Windows Server 2012 для тестирования. Ставить их из ISO образов очень не хотелось. Благо у Microsoft доступны готовые предустановленные образы виртуальных машин в формате VHD. Только вот незадача PD8 никак не хотел делать из такого образа машину. Немного погуглив я нашел способ как это сделать.</p>
 
@@ -601,6 +701,10 @@ Stub так же можно использовать для мокировани
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/">Загрузка больших файлов в Media для Umbraco CMS</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/">Как открыть VHD образ виртуальной машины в Parallels Desktop 8</a>
