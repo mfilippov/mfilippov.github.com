@@ -4,7 +4,7 @@
   <title><![CDATA[Mikhail Filippov's Blog]]></title>
   <link href="http://blog.filippov.me/atom.xml" rel="self"/>
   <link href="http://blog.filippov.me/"/>
-  <updated>2013-02-20T11:56:09+04:00</updated>
+  <updated>2013-02-20T12:09:15+04:00</updated>
   <id>http://blog.filippov.me/</id>
   <author>
     <name><![CDATA[Mikhail Filippov]]></name>
@@ -18,7 +18,9 @@
     <link href="http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/"/>
     <updated>2013-02-15T19:09:00+04:00</updated>
     <id>http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco</id>
-    <content type="html"><![CDATA[<p>Недавно столкнулся со с проблемой в Umbraco CMS. С настройками по умолчанию не получалось загружать файлы больше 30Мб. Причем выглядит это крайне странно полоска загрузки файл пробегает окно загрузки закрывается, при этом файл не появляется. При это никаких ошибок не возникает. Обычно проблемы с загрузкой больших файлов решается установкой в web.config настройки максимальной длины запроса:</p>
+    <content type="html"><![CDATA[<p><a href="#webconfig">Перейти к готовому примеру web.config</a></p>
+
+<p>Недавно столкнулся со с проблемой в Umbraco CMS. С настройками по умолчанию не получалось загружать файлы больше 30Мб. Причем выглядит это крайне странно полоска загрузки файл пробегает окно загрузки закрывается, при этом файл не появляется. При это никаких ошибок не возникает. Обычно проблемы с загрузкой больших файлов решается установкой в web.config настройки максимальной длины запроса:</p>
 
 <figure class='code'><figcaption><span>web.config </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;httpRuntime</span> <span class="na">requestValidationMode=</span><span class="s">&quot;2.0&quot;</span> <span class="na">maxRequestLength=</span><span class="s">&quot;1024000&quot;</span> <span class="na">executionTimeout=</span><span class="s">&quot;3600&quot;</span> <span class="nt">/&gt;</span>
@@ -51,11 +53,13 @@
 <li>В web.config проверяем что в httpRuntime стоит правильно значение maxRequestLength <strong>без этого работать не будет!</strong></li>
 <li>Пробуем повторно загрузить файл:
 <img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/10.png" alt="Change Settings" /></li>
-<li>Все работает как надо</li>
+<li>Все работает корректно</li>
 </ul>
 
 
-<p>В итоге чтобы работала загрузка больших файлов в Media, в секции  system.web и system.webServer файла web.config нужно добавить следующие параметры (ограничение размера 1Гб):</p>
+<h2><a id="webconfig"></a>Чтобы все это настроить без IIS Manager</h2>
+
+<p>В секции  system.web и system.webServer файла web.config нужно добавить следующие параметры (ограничение размера 1Гб):</p>
 
 <figure class='code'><figcaption><span>web.config</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
