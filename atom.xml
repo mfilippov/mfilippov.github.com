@@ -2,31 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Mikhail Filippov's Blog]]></title>
-  <link href="http://blog.filippov.me/atom.xml" rel="self"/>
-  <link href="http://blog.filippov.me/"/>
+  <link href="https://blog.filippov.me/atom.xml" rel="self"/>
+  <link href="https://blog.filippov.me/"/>
   <updated>2013-08-19T13:10:15+04:00</updated>
-  <id>http://blog.filippov.me/</id>
+  <id>https://blog.filippov.me/</id>
   <author>
     <name><![CDATA[Mikhail Filippov]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[How to setup WebDeploy on IIS for Visual Studio publishing.]]></title>
-    <link href="http://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing/"/>
+    <link href="https://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing/"/>
     <updated>2013-03-15T16:29:00+04:00</updated>
-    <id>http://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing</id>
+    <id>https://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Загрузка больших файлов в Media для Umbraco CMS]]></title>
-    <link href="http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/"/>
+    <link href="https://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/"/>
     <updated>2013-02-15T19:09:00+04:00</updated>
-    <id>http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco</id>
+    <id>https://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco</id>
     <content type="html"><![CDATA[<p><a href="#webconfig">Перейти к готовому примеру web.config</a></p>
 
 <p>Недавно столкнулся со с проблемой в Umbraco CMS. С настройками по умолчанию не получалось загружать файлы больше 30Мб. Причем выглядит это крайне странно полоска загрузки файл пробегает окно загрузки закрывается, при этом файл не появляется. При это никаких ошибок не возникает. Обычно проблемы с загрузкой больших файлов решается установкой в web.config настройки максимальной длины запроса:</p>
@@ -42,26 +42,26 @@
 
 <ul>
 <li>Нажимаем кнопку загрузить файл:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/1.png" alt="Нажимаем загрузить файл" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/1.png" alt="Нажимаем загрузить файл" /></li>
 <li>Выбираем файл и нажимаем кнопку Upload:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/2.png" alt="Выбираем файл" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/2.png" alt="Выбираем файл" /></li>
 <li>Видим что пошла нормальная загрузка:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/3.png" alt="Пошла загрузка" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/3.png" alt="Пошла загрузка" /></li>
 <li>После окончания загрузки окно закрывается без ошибок и предупреждений но файл на появляется.
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/4.png" alt="Файл не появился" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/4.png" alt="Файл не появился" /></li>
 <li>Откроем окно загрузки повторно:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/5.png" alt="Повторное октрытие" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/5.png" alt="Повторное октрытие" /></li>
 <li>Тут мы видим что полоска загрузки красная похоже произошла какая-то ошибка. Посмотрим что в этот момент происходило в Fiddler. Происходит странное, в момент обращения к обработчику MediaUploader.ashx выдается ошибка 404, при этом в случае загрузки небольшого файла такого не происходит.
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/6.png" alt="Повторное октрытие" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/6.png" alt="Повторное октрытие" /></li>
 <li>После долгих поисков я нашел параметр который отвечает за настройку фильтрации максимальному размеру поля Content-Legth в запросе. Для его изменения открываем IIS Manager(Его можно поменять и из web.config как я опишу ниже). Открывает настройки нашего сайта и выбираем &#8220;Request Filtering&#8221;:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/7.png" alt="ISS Manager" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/7.png" alt="ISS Manager" /></li>
 <li>На панели действий выбираем &#8220;Edit Feature Settings…&#8221;:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/8.png" alt="Edit Feature Settings" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/8.png" alt="Edit Feature Settings" /></li>
 <li>Меняем значение поля Maximum allowed content length на большее например дописываем пару нулей :), обратите внимание что размер значения в байтах:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/9.png" alt="Change Settings" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/9.png" alt="Change Settings" /></li>
 <li>В web.config проверяем что в httpRuntime стоит правильно значение maxRequestLength <strong>без этого работать не будет!</strong></li>
 <li>Пробуем повторно загрузить файл:
-<img src="http://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/10.png" alt="Change Settings" /></li>
+<img src="https://blog.filippov.me/images/2013-02-15-how-to-upload-big-media-file-in-umbraco/10.png" alt="Change Settings" /></li>
 <li>Все работает корректно</li>
 </ul>
 
@@ -101,9 +101,9 @@
   
   <entry>
     <title type="html"><![CDATA[Как открыть VHD образ виртуальной машины в Parallels Desktop 8]]></title>
-    <link href="http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/"/>
+    <link href="https://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/"/>
     <updated>2013-02-01T15:18:00+04:00</updated>
-    <id>http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop</id>
+    <id>https://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop</id>
     <content type="html"><![CDATA[<p>Я часто сталкиваюсь с необходимостью развертывания различных виртуальных машин на своем ноутбуке. В этом мне всегда помогает Parallels Desktop 8. Это хороший продукт, который очень тесно интегрирован в мою основную ОС Mac OS X. Отдельные типа виртуальных машин PD8 умеет конвертировать при открытии, то есть достаточно выполнить комманду File->Open и выбрать файл с настройками виртуальной машины. Этот способ работает для VMWare и VirtualBox, когда у вас есть файл с настройками машины.</p>
 
 <p>Недавно мне понадобилось развернуть несколько триальных версий Windows Server 2012 для тестирования. Ставить их из ISO образов очень не хотелось. Благо у Microsoft доступны готовые предустановленные образы виртуальных машин в формате VHD. Только вот незадача PD8 никак не хотел делать из такого образа машину. Немного погуглив я нашел способ как это сделать.</p>
@@ -155,40 +155,40 @@
 
 <p>Теперь открываем этот файл в PD8 File->Open:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/1.png" alt="Открываем файл" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/1.png" alt="Открываем файл" /></p>
 
 <p>PD8 предложит конвертировать машину:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/2.png" alt="Начало конвертации" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/2.png" alt="Начало конвертации" /></p>
 
 <p>Указываем папку куда положить конвертированную машину и запускаем процесс:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/3.png" alt="Процесс конвертации" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/3.png" alt="Процесс конвертации" /></p>
 
 <p>После завершения конвертиции можно сразу запустить машину. Но мне необходимо запустить несколько таких машин, по этому превращу машину в шаблон. Когда после конвертации PD8 спросит нужно ли запустить машину для завершения конвертации выбираем No.</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/4.png" alt="No" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/4.png" alt="No" /></p>
 
 <p>Выбираем File->Convert To Template:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/5.png" alt="Convert to template" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/5.png" alt="Convert to template" /></p>
 
 <p>После этого закрываем машину и у нас в списке машин появляется готовый шаблон. Делаем из этого шаблона рабочую машину:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/6.png" alt="Развертывание" />
-<img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/7.png" alt="Куда развертывать" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/6.png" alt="Развертывание" />
+<img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/7.png" alt="Куда развертывать" /></p>
 
 <p>Теперь можно запустить развернутую машину она при этом продолжит конвертацию:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/8.png" alt="Продолжение конвертации" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/8.png" alt="Продолжение конвертации" /></p>
 
 <p>Через некоторое время машина попросит сделать дополнительные настройки:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/9.png" alt="Дополнительные настройки" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/9.png" alt="Дополнительные настройки" /></p>
 
 <p>Проходим шаги мастера настройки ОС и входим в систему. После этого автоматически установятся Parallels Tools машина перезагрузится и конвертация будет завершена.</p>
 
-<p><img src="http://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/10.png" alt="Завершение" /></p>
+<p><img src="https://blog.filippov.me/images/2013-02-01-how-to-open-vhd-vm-in-parallels-desktop/10.png" alt="Завершение" /></p>
 
 <p>Шаблон для Windows Server я специально сделал до первого запуска, потому что при этом у каждой виртуальной машины будет свой собственный SID и они смогут нормально работать в одном домене Active Directory. Если этого не сделать, а сразу запустить машину и довести конвертацию до конца, не получится ввести две виртуальных машины в один домен так как у них будут одинаковые SID.</p>
 ]]></content>
@@ -196,58 +196,58 @@
   
   <entry>
     <title type="html"><![CDATA[Обзор облака из коробки.]]></title>
-    <link href="http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/"/>
+    <link href="https://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/"/>
     <updated>2013-01-26T00:15:00+04:00</updated>
-    <id>http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud</id>
+    <id>https://blog.filippov.me/blog/2013/01/26/review-infobox-cloud</id>
     <content type="html"><![CDATA[<p>Последние несколько месяцев проходило тестирование облака от компании InfoBox. Хотелось бы поделится впечатлениями о данном решение.</p>
 
 <p>Облако InfoBox построено на основе контейнерной виртуализации от компании Parallels. Есть возможность выбора контейнера как на основе Linux так и на основе Windows. В качестве Linux дистрибутива предлагается Debian 6.0 x86_64. В качестве Windows: Server 2008 R2.</p>
 
 <p>Интерфейс управления облаком InfoBox выглядит достаточно не плохо и в целом позволяет быстро разобраться с ним даже не подготовленному пользователю. При создании машин есть 3 предопределенных профиля: Basic, Power и Mega. Вот пример настроек доступных при создании виртуальной машины:
-<img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/1.png" alt="Создание виртуальной машины" />
+<img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/1.png" alt="Создание виртуальной машины" />
 Есть одна интересная особенность не забудьте выбрать пропускную способность. Шейпер у инфобокс работает очень хорошо, я сначала не понял почему так сильно тормозит сеть. Особенно это сильно заметно на RDP соединение у Windows машины. Эту настройку можно будет поменять после того как машина будет создана.</p>
 
 <p>В работе с сетью есть несколько особенностей. Во первых у клиента есть возможность использовать как публичные так и приватные адреса. То есть вы можете создать приватную сетевую  инфраструктуру и сделать себе 1 точку входа в нее. Во вторых можно создать один или несколько преднастроенных балансировщиков нагрузки HTTP, которые можно сразу назначить на уже созданные сервера. Еще одно особенностью является то что исходящий траффик платный. Для тестирования производительности сети я установил на сервер SpeedTest Mini. Вот результат теста при том что в настройках сетевого подключения стоит ограничение 100 КБит/сек:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/2.png" alt="Тест сети 100КБит/сек" /></p>
+<p><img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/2.png" alt="Тест сети 100КБит/сек" /></p>
 
 <p>А вот при ограничение в 50МБит/сек:</p>
 
-<p><img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/3.png" alt="Тест сети 50МБит/сек" /></p>
+<p><img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/3.png" alt="Тест сети 50МБит/сек" /></p>
 
 <p>Как видим полоса пропускания соответствует заявленной.
 Из веб-интерфейса так же можно управлять настройками брандмауэра:
-<img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/4.png" alt="Создание правила брандмауэра" />
+<img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/4.png" alt="Создание правила брандмауэра" />
 Чтобы оценить примерные затраты на использование облака, по каждому серверу можно просмотреть расход ресурсов и примерную стоимость:
-<img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/5.png" alt="Расход ресурсов" />
+<img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/5.png" alt="Расход ресурсов" />
 Так же можно помотреть расход ресурсов по всей инфраструктуре в пункте &#8220;Использование всех ресурсов&#8221;:
-<img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/6.png" alt="Использование всех ресурсов" />
+<img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/6.png" alt="Использование всех ресурсов" />
 На учетной записи есть общие лимиты которые действуют суммарно на всю инфраструктуру их можно просмотреть в пункте меню &#8220;Ресурсы подписки&#8221;:
-<img src="http://blog.filippov.me/images/2013-01-26-review-infobox-cloud/7.png" alt="Ресурсы подписки" />
+<img src="https://blog.filippov.me/images/2013-01-26-review-infobox-cloud/7.png" alt="Ресурсы подписки" />
 Из веб-панели всегда можно сбросить пароль для доступа к машине при этом новый пароль Вам вышлют на почту на которую зарегистрирован аккаунт.</p>
 
 <p>Отдельно хочется отметить достаточно удобный функционал резервного копирования машин по расписанию &#8220;Ежедневно&#8221; и &#8220;Еженедельно&#8221;. Из минусов не нашел как выгрузить резервные копии на свой внешний ресурс и нет возможности восстановить резервную копию в отдельную машину, чтобы была возможность достать срез данных на определенный момент.
 Доступна функциональность создания образа сервера, который в дальнейшем можно использовать как шаблон для запуска новых серверов, очень удобная вещь для массового развертывания приложений.</p>
 
-<p>Для автоматизации облака доступен API <a href="http://download.pa.parallels.com/poa/5.4/doc/pdf/POA%20RESTful%20API%20Guide/paci-restful-api-guide-5.4.pdf">PACI</a> с помощью удобного REST интерфейса вы можете написать различные скрипты автоматизации работы облака.</p>
+<p>Для автоматизации облака доступен API <a href="https://download.pa.parallels.com/poa/5.4/doc/pdf/POA%20RESTful%20API%20Guide/paci-restful-api-guide-5.4.pdf">PACI</a> с помощью удобного REST интерфейса вы можете написать различные скрипты автоматизации работы облака.</p>
 
 <p>Из общих моментов InfoBox так же предлагает дополнтельный услуги такие как управление и регистрация доменов и SSL-сертификаты.
 По итогам тестирования особых проблем с работой облака я не заметил. Иногда были некоторые подтормаживания веб-интерфейса управления, но в целом все работает не плохо. Еще из минусов не нашел возможности делегирования управления на дополнительные учетные записи например если у вас в компании несколько системных администраторов и вы бы хотели делегировать управление частью сервером им, все работает под одной учетной записью, но я думаю при производственном внедрении InfoBox сможет решить эту проблемы. Отдельно хотелось бы заметить наличие контейнеров с Windows Server, я их пробывал в первый раз, оказалось вполне достойное решение.</p>
 
-<p>Вы можете сами все это потрогать достаточно пройти по адресу <a href="http://www.infobox.ru/cloud/servers/">http://www.infobox.ru/cloud/servers/</a> и заказать себе тестовый доступ, там же вы можете получить дополнительную информацию и задать свои вопросы онлайн-консультанту.</p>
+<p>Вы можете сами все это потрогать достаточно пройти по адресу <a href="https://www.infobox.ru/cloud/servers/">https://www.infobox.ru/cloud/servers/</a> и заказать себе тестовый доступ, там же вы можете получить дополнительную информацию и задать свои вопросы онлайн-консультанту.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Тестирование с помощью Microsoft Fakes]]></title>
-    <link href="http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/"/>
+    <link href="https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/"/>
     <updated>2012-07-08T10:39:00+04:00</updated>
-    <id>http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes</id>
+    <id>https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes</id>
     <content type="html"><![CDATA[<p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
 
-<p>В .NET существует популярный mock-фреймвок: <a href="http://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
+<p>В .NET существует популярный mock-фреймвок: <a href="https://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -280,7 +280,7 @@
 
 <p>Напишем тест на метод SignIn:</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -319,7 +319,7 @@
 
 <p>Для начала рассмотрим Stubs. Продолжим предыдущий пример. Для выноса из класса AccountManager зависимости DateTime, создадим новый интерфейс IDateTime, который будет определять 1 метод Now(), возвращающий текущую дату и время:</p>
 
-<figure class='code'><figcaption><span>IDateTime.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>IDateTime.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -332,7 +332,7 @@
 
 <p>Добавим в основной проект его реализацию:</p>
 
-<figure class='code'><figcaption><span>DateTimeHelper.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>DateTimeHelper.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -351,7 +351,7 @@
 
 <p>Изменим AccountManager так, чтобы он принимал реализацию интерфейса в конструкторе и использовал её для получения текущего времени:</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -398,11 +398,11 @@
 
 <p>Теперь перепишем тест с использованием Stubs, для этого для начала нужно сгенерировать Stubs. Нажмем правой кнопкой на сборку к которой мы хотим получить Stub. И выберем: Add Fakes Assembly.</p>
 
-<p><img src="http://blog.filippov.me/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
+<p><img src="https://blog.filippov.me/images/2012-08-07-unit-testing-with-microsoft-fakes/img1.png" alt="How to generate Stubs." /></p>
 
 <p>После этого у нас появятся сгенерированные Stubs для всех классов сборки. И файл с расширением .fakes с настройками кодогенерации. Теперь в тесте мы можем использовать сгенерированный Stub.</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -436,7 +436,7 @@
 <p>Запустим тест и видим что он нормально проходит.
 Stub так же можно использовать для мокирования свойств:</p>
 
-<figure class='code'><figcaption><span>test.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>test.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -455,11 +455,11 @@ Stub так же можно использовать для мокировани
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Дополнительную информацию о Stubs можно получить в <a href="http://msdn.microsoft.com/en-us/library/hh549174%28v=vs.110%29.aspx">MSDN</a>.</p>
+<p>Дополнительную информацию о Stubs можно получить в <a href="https://msdn.microsoft.com/en-us/library/hh549174%28v=vs.110%29.aspx">MSDN</a>.</p>
 
 <p>Теперь рассмотрим Shims. В тестовом проекте интерфейс IDateTime служит исключительно для того чтобы была возможность подменить вызов DateTime.Now, давайте посмотрим как с этим справится Shim. Для начала удалим интерфейс и его реализацию, затем вернем на место вызов DateTime.Now.</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -496,7 +496,7 @@ Stub так же можно использовать для мокировани
 
 <p> Видим что тест перестал проходить. Теперь добавим в тест изменение поведения DateTime.Now с помощью Shims. Для начала сделаем Add Fakes Assembly для сборки System, это обеспечит генерацию Shim для класса DateTime, а за тем перепишем код теста:</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -523,7 +523,7 @@ Stub так же можно использовать для мокировани
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Запустим тест и видим, что он проходит. Shim позволяет подменять функциональность любых закрытых методов и избавляет нас от необходимости делать кучу ненужных оберток. Опишу подробнее, что происходит. Все вызовы к DateTime.Now внутри блока using (ShimsContext.Create()) будут перехвачены и подменены mock-объектом. Mock-контекст существует только в рамках этого блока. Дополнительно об использование Shims вы можете почитать в <a href="http://msdn.microsoft.com/en-us/library/hh549176%28v=vs.110%29.aspx">MSDN</a>.</p>
+<p>Запустим тест и видим, что он проходит. Shim позволяет подменять функциональность любых закрытых методов и избавляет нас от необходимости делать кучу ненужных оберток. Опишу подробнее, что происходит. Все вызовы к DateTime.Now внутри блока using (ShimsContext.Create()) будут перехвачены и подменены mock-объектом. Mock-контекст существует только в рамках этого блока. Дополнительно об использование Shims вы можете почитать в <a href="https://msdn.microsoft.com/en-us/library/hh549176%28v=vs.110%29.aspx">MSDN</a>.</p>
 
 <p>Подведем итоги Microsoft Fakes представляет собой Mock-фреймворк интегрированный в Visual Studio 2012 и позволяющий сильно упростить написание тестов на платформе .NET.</p>
 

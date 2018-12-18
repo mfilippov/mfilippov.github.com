@@ -12,22 +12,22 @@
   <meta name="description" content="В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания &hellip;">
   
   <meta name='yandex-verification' content='61921a770a854546' />
-  <!-- http://t.co/dKP3o1e -->
+  <!-- https://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/">
+  <link rel="canonical" href="https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Mikhail Filippov's Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  <!--Fonts from Google"s Web font directory at https://google.com/webfonts -->
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
   <script type="text/javascript">
@@ -59,7 +59,7 @@
   
 </ul>
   
-<form action="http://google.com/search" method="get">
+<form action="https://google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="q" value="site:blog.filippov.me" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
@@ -104,9 +104,9 @@
 
 <div class="entry-content"><p>В Visual Studio 2012 получил развитие один из продуктов Microsoft Researсh известный под именем Moles. Это mock-фреймворк для облегчения написания юнит-тестов. Моки это специальные объекты заглушки, с помощью которых в реализуют части функциональности приложения, которые необходимы тестируемому методу. Это дает возможность тестировать только логику метода определив статическую логику для его зависимостей.</p>
 
-<p>В .NET существует популярный mock-фреймвок: <a href="http://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
+<p>В .NET существует популярный mock-фреймвок: <a href="https://code.google.com/p/moq/">Moq</a>, но он не позволяет мокировать статические методы. Это является достаточно серьезной проблемой, когда вы тестируете код который зависит к примеру от текущей даты или файловой системы. Проблема заключается в следующем. Предположим у Вас есть код который регистрирует время входа пользователя в систему:</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -139,7 +139,7 @@
 
 <p>Напишем тест на метод SignIn:</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -178,7 +178,7 @@
 
 <p>Для начала рассмотрим Stubs. Продолжим предыдущий пример. Для выноса из класса AccountManager зависимости DateTime, создадим новый интерфейс IDateTime, который будет определять 1 метод Now(), возвращающий текущую дату и время:</p>
 
-<figure class='code'><figcaption><span>IDateTime.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>IDateTime.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -191,7 +191,7 @@
 
 <p>Добавим в основной проект его реализацию:</p>
 
-<figure class='code'><figcaption><span>DateTimeHelper.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>DateTimeHelper.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -210,7 +210,7 @@
 
 <p>Изменим AccountManager так, чтобы он принимал реализацию интерфейса в конструкторе и использовал её для получения текущего времени:</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -261,7 +261,7 @@
 
 <p>После этого у нас появятся сгенерированные Stubs для всех классов сборки. И файл с расширением .fakes с настройками кодогенерации. Теперь в тесте мы можем использовать сгенерированный Stub.</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -295,7 +295,7 @@
 <p>Запустим тест и видим что он нормально проходит.
 Stub так же можно использовать для мокирования свойств:</p>
 
-<figure class='code'><figcaption><span>test.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>test.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -314,11 +314,11 @@ Stub так же можно использовать для мокировани
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Дополнительную информацию о Stubs можно получить в <a href="http://msdn.microsoft.com/en-us/library/hh549174%28v=vs.110%29.aspx">MSDN</a>.</p>
+<p>Дополнительную информацию о Stubs можно получить в <a href="https://msdn.microsoft.com/en-us/library/hh549174%28v=vs.110%29.aspx">MSDN</a>.</p>
 
 <p>Теперь рассмотрим Shims. В тестовом проекте интерфейс IDateTime служит исключительно для того чтобы была возможность подменить вызов DateTime.Now, давайте посмотрим как с этим справится Shim. Для начала удалим интерфейс и его реализацию, затем вернем на место вызов DateTime.Now.</p>
 
-<figure class='code'><figcaption><span>AccountManager.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManager.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -355,7 +355,7 @@ Stub так же можно использовать для мокировани
 
 <p> Видим что тест перестал проходить. Теперь добавим в тест изменение поведения DateTime.Now с помощью Shims. Для начала сделаем Add Fakes Assembly для сборки System, это обеспечит генерацию Shim для класса DateTime, а за тем перепишем код теста:</p>
 
-<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='http://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>AccountManagerTests.cs</span><a href='https://blog.filippov.me/blog/2012/08/07/unit-testing-with-microsoft-fakes/'>Ссылка на статью</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -382,7 +382,7 @@ Stub так же можно использовать для мокировани
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Запустим тест и видим, что он проходит. Shim позволяет подменять функциональность любых закрытых методов и избавляет нас от необходимости делать кучу ненужных оберток. Опишу подробнее, что происходит. Все вызовы к DateTime.Now внутри блока using (ShimsContext.Create()) будут перехвачены и подменены mock-объектом. Mock-контекст существует только в рамках этого блока. Дополнительно об использование Shims вы можете почитать в <a href="http://msdn.microsoft.com/en-us/library/hh549176%28v=vs.110%29.aspx">MSDN</a>.</p>
+<p>Запустим тест и видим, что он проходит. Shim позволяет подменять функциональность любых закрытых методов и избавляет нас от необходимости делать кучу ненужных оберток. Опишу подробнее, что происходит. Все вызовы к DateTime.Now внутри блока using (ShimsContext.Create()) будут перехвачены и подменены mock-объектом. Mock-контекст существует только в рамках этого блока. Дополнительно об использование Shims вы можете почитать в <a href="https://msdn.microsoft.com/en-us/library/hh549176%28v=vs.110%29.aspx">MSDN</a>.</p>
 
 <p>Подведем итоги Microsoft Fakes представляет собой Mock-фреймворк интегрированный в Visual Studio 2012 и позволяющий сильно упростить написание тестов на платформе .NET.</p>
 
@@ -417,7 +417,7 @@ Stub так же можно использовать для мокировани
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/" data-via="filippovma" data-counturl="http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/" >Tweet</a>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/" data-via="filippovma" data-counturl="https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -437,7 +437,7 @@ Stub так же можно использовать для мокировани
 
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
 
@@ -514,7 +514,7 @@ Stub так же можно использовать для мокировани
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/filippovma" class="twitter-follow-button" data-show-count="false">Follow @filippovma</a>
+    <a href="https://twitter.com/filippovma" class="twitter-follow-button" data-show-count="false">Follow @filippovma</a>
   
 </section>
 
@@ -523,7 +523,7 @@ Stub так же можно использовать для мокировани
 <section class="googleplus">
   <h1>
     <a href="https://plus.google.com/104415767739829768836?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      <img src="https://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
       Google+
     </a>
   </h1>
@@ -539,7 +539,7 @@ Stub так же можно использовать для мокировани
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2013 - Mikhail Filippov -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>
 </p>
 
 
@@ -575,13 +575,13 @@ Stub так же можно использовать для мокировани
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/';
-        var disqus_url = 'http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/';
+        var disqus_identifier = 'https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/';
+        var disqus_url = 'https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/';
         var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -605,7 +605,7 @@ Stub так же можно использовать для мокировани
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'https://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

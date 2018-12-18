@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.filippov.me/sitemap.xml 
+Sitemap: https://blog.filippov.me/sitemap.xml

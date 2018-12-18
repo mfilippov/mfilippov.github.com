@@ -1,41 +1,41 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/</loc>
+        <loc>https://blog.filippov.me/blog/2012/07/08/unit-testing-with-microsoft-fakes/</loc>
         <lastmod>2013-01-26T00:11:20+04:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/</loc>
+        <loc>https://blog.filippov.me/blog/2013/01/26/review-infobox-cloud/</loc>
         <lastmod>2013-01-28T12:34:45+04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/
+            https://blog.filippov.me/blog/2013/02/01/how-to-open-vhd-vm-in-parallels-desktop/
         </loc>
         <lastmod>2013-02-01T16:31:02+04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/
+            https://blog.filippov.me/blog/2013/02/15/how-to-upload-big-media-file-in-umbraco/
         </loc>
         <lastmod>2013-02-20T12:09:15+04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing/
+            https://blog.filippov.me/blog/2013/03/15/how-to-setup-webdeploy-on-iis-for-visual-studio-publishing/
         </loc>
         <lastmod>2013-03-15T16:29:49+04:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.filippov.me/</loc>
+        <loc>https://blog.filippov.me/</loc>
         <lastmod>2013-03-15T16:29:49+04:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.filippov.me/blog/archives/</loc>
+        <loc>https://blog.filippov.me/blog/archives/</loc>
         <lastmod>2013-03-15T16:29:49+04:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.filippov.me/robots.txt</loc>
+        <loc>https://blog.filippov.me/robots.txt</loc>
         <lastmod>2013-01-26T00:11:20+04:00</lastmod>
     </url>
 </urlset>
