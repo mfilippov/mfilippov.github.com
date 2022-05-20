@@ -1,2 +1,2 @@
 # mfilippov.github.com
-My personal page.
+Source code of my personal page.
